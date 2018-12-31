@@ -1,0 +1,99 @@
+/Users/laiqin/msNode/public
+应用实例，访问地址为 http://:::8081
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+getUsers: /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D {}
+{}
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+showTables
+Executing (default): SELECT count(*) AS `count` FROM `users` AS `user`;
+Executing (default): SELECT `id`, `nickname`, `introduce`, `birthday`, `createdAt`, `updatedAt` FROM `users` AS `user` LIMIT 0, 10;
+Executing (default): SELECT count(*) AS `count` FROM `sys_roles` AS `sys_roles`;
+Executing (default): SELECT `id`, `name`, `createdAt`, `updatedAt` FROM `sys_roles` AS `sys_roles` LIMIT 0, 5;
+Executing (default): show tables
+[ 'articles',
+  'charges',
+  'comments',
+  'menus',
+  'orders',
+  'skus',
+  'users' ]
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+{ roleid: 1 }
+Executing (default): SELECT count(*) AS `count` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1;
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1 LIMIT 0, 1000;
+Executing (default): desc articles
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'articles','id','Select,Insert,Delete','2018-08-15 10:28:02','2018-08-15 10:28:02');
+Executing (default): desc articles
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'articles','summary','Select,Insert,Update,Delete','2018-08-15 10:28:13','2018-08-15 10:28:13');
+Executing (default): desc articles
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'articles','authorId','Select,Insert,Update,Delete','2018-08-15 10:28:22','2018-08-15 10:28:22');
+Executing (default): desc menus
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'menus','id','Select,Insert,Update,Delete','2018-08-15 10:28:35','2018-08-15 10:28:35');
+Executing (default): desc menus
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'menus','ordernum','Select,Insert','2018-08-15 10:28:43','2018-08-15 10:28:43');
+updateSysPrivsColumn: { columnPriv: 'Insert,Update,Delete' } {}
+Executing (default): UPDATE `sys_privs_columns` SET `columnPriv`='Insert,Update,Delete',`updatedAt`='2018-08-15 10:28:48'
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`id` = NULL LIMIT 1;
+updateSysPrivsColumn: { columnPriv: 'Update,Delete' } {}
+Executing (default): UPDATE `sys_privs_columns` SET `columnPriv`='Update,Delete',`updatedAt`='2018-08-15 10:28:49'
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`id` = NULL LIMIT 1;
+updateSysPrivsColumn: { columnPriv: 'Delete' } {}
+Executing (default): UPDATE `sys_privs_columns` SET `columnPriv`='Delete',`updatedAt`='2018-08-15 10:28:49'
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`id` = NULL LIMIT 1;
+Executing (default): DELETE FROM `sys_privs_columns`
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+{ roleid: 2 }
+Executing (default): SELECT count(*) AS `count` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 2;
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 2 LIMIT 0, 1000;
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+{ roleid: 1 }
+Executing (default): SELECT count(*) AS `count` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1;
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1 LIMIT 0, 1000;
+/Users/laiqin/msNode/public
+应用实例，访问地址为 http://:::8081
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+getUsers: /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D {}
+{}
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+showTables
+Executing (default): SELECT count(*) AS `count` FROM `users` AS `user`;
+Executing (default): SELECT `id`, `nickname`, `introduce`, `birthday`, `createdAt`, `updatedAt` FROM `users` AS `user` LIMIT 0, 10;
+Executing (default): SELECT count(*) AS `count` FROM `sys_roles` AS `sys_roles`;
+Executing (default): SELECT `id`, `name`, `createdAt`, `updatedAt` FROM `sys_roles` AS `sys_roles` LIMIT 0, 5;
+Executing (default): show tables
+[ 'articles',
+  'charges',
+  'comments',
+  'menus',
+  'orders',
+  'skus',
+  'users' ]
+validateToken /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D /MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k=
+string
+{ userId: 2, time: 1533883577 }
+{ roleid: 1 }
+Executing (default): SELECT count(*) AS `count` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1;
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`roleid` = 1 LIMIT 0, 1000;
+Executing (default): desc charges
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'charges','name','Select,Insert','2018-08-15 10:32:31','2018-08-15 10:32:31');
+Executing (default): desc menus
+Executing (default): INSERT INTO `sys_privs_columns` (`id`,`roleid`,`tableName`,`columnName`,`columnPriv`,`createdAt`,`updatedAt`) VALUES (DEFAULT,1,'menus','ordernum','Select,Insert','2018-08-15 10:32:44','2018-08-15 10:32:44');
+updateSysPrivsColumn: { columnPriv: 'Insert' } {}
+Executing (default): UPDATE `sys_privs_columns` SET `columnPriv`='Insert',`updatedAt`='2018-08-15 10:32:55'
+Executing (default): SELECT `id`, `roleid`, `tableName`, `columnName`, `columnPriv`, `createdAt`, `updatedAt` FROM `sys_privs_columns` AS `sys_privs_columns` WHERE `sys_privs_columns`.`id` = NULL LIMIT 1;
+deleteSysPrivsColumn: {}
+Executing (default): DELETE FROM `sys_privs_columns`

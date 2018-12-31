@@ -1,0 +1,120 @@
+
+
+table: sys_users
+
+	query($token:String!, $where:String!,$currentPage:Int!,$pageSize:Int!){
+		sysUsers(token:$token, where:$where,currentPage:$currentPage,pageSize:$pageSize){
+			count,
+			sysUsers{
+				id,
+				userName,
+				createdAt,
+				updatedAt,
+			}
+		}
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"pageSize": 30
+	}
+
+	mutation($token:String!,$item:String!){
+		insertSysUser(token:$token,item:$item)
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"item": "{\"userName\":\"1\",\"password\":\"123\"}"
+	}
+table: sys_roles
+	query($token:String!,$pageSize:Int!){
+		sysRoles(token:$token, pageSize:$pageSize){
+			count,
+			sysRoles{
+				id,
+				name,
+        createdAt,
+        updatedAt
+			}
+		}
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"pageSize": 30
+	}
+
+	mutation($token:String!,$item:String!){
+		insertSysRole(token:$token,item:$item)
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"item": "{\"name\":\"骨干\"}"
+	}
+
+table: sys_privs_columns
+
+	query($token:String!,$pageSize:Int!){
+		sysPrivsColumns(token:$token,pageSize:$pageSize){
+			count,
+			sysPrivsColumns{
+				id,
+				roleid,
+				tableName,
+				columnName,
+				createdAt,
+				updatedAt
+			}
+		}
+	}
+
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"pageSize": 30
+	}
+
+	mutation($token:String!,$item:String!){
+		insertSysPrivsColumn(token:$token,item:$item)
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"item": "{\"roleid\":\"1\",\"tableName\":\"skus\",\"columnName\":\"menu\",\"columnPriv\":\"Select,Update,Insert\"}"
+	}
+
+
+table: sys_privs_tables
+
+	query($token:String!,$pageSize:Int!){
+		sysPrivsTables(token:$token,pageSize:$pageSize){
+			count,
+			sysPrivsTables{
+				id,
+				roleid,
+				tableName,
+				tablePriv,
+				createdAt,
+				updatedAt
+			}
+		}
+	}
+
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"pageSize": 30
+	}
+
+	mutation($token:String!,$item:String!){
+		insertSysPrivsTable(token:$token,item:$item)
+	}
+	{
+		"token": "/MKivz0eqQbfrfOO3OXzpeiOuUCE+rLv7w5PmyEkn6k%3D",
+		"item": "{\"roleid\":\"1\",\"tableName\":\"skus\",\"tablePriv\":\"Select,Update,Insert\"}"
+	}
+
+
+
+SELECT `sys_users`.*, `sys_roles`.`id` AS `sys_roles.id`, `sys_roles`.`name` AS `sys_roles.name`, `sys_roles`.`createdAt` AS `sys_roles.createdAt`, `sys_roles`.`updatedAt` AS `sys_roles.updatedAt`, `sys_roles->sys_user_roles`.`createdAt` AS `sys_roles.sys_user_roles.createdAt`, `sys_roles->sys_user_roles`.`updatedAt` AS `sys_roles.sys_user_roles.updatedAt`, `sys_roles->sys_user_roles`.`sysUserId` AS `sys_roles.sys_user_roles.sysUserId`, `sys_roles->sys_user_roles`.`sysRoleId` AS `sys_roles.sys_user_roles.sysRoleId` 
+FROM (SELECT `sys_users`.`id`, `sys_users`.`name`, `sys_users`.`password`, `sys_users`.`createdAt`, `sys_users`.`updatedAt` FROM `sys_users` AS `sys_users` LIMIT 0, 30) AS `sys_users` 
+LEFT OUTER JOIN 
+	( `sys_user_roles` AS `sys_roles->sys_user_roles` 
+		INNER JOIN `sys_roles` AS `sys_roles` 
+		ON `sys_roles`.`id` = `sys_roles->sys_user_roles`.`sysRoleId`) 
+ON `sys_users`.`id` = `sys_roles->sys_user_roles`.`sysUserId`;

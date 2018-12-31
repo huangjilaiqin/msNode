@@ -1,0 +1,13 @@
+{
+	"imageUploadDir":"/Users/laiqin/msNode/tmp",
+	"imageUploadMaxSize":2097152,
+	"dbName":"mstemplate",
+	"dbIp":"47.98.171.206",
+	"dbIp":"127.0.0.1",
+	"dbPort":"3306",
+	"dbUser":"mstemplate",
+	"dbPass":"mstemplate_pass",
+	"tokenKey":"facai20180524199",
+	"tokenIv":"fight20180818188",
+	"sessionTimeout":31536000
+}
